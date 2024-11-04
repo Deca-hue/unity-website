@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner Web Layout</title>
+    <link rel="icon" type="image/x-icon" href="unittyicon.png">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="welcome-alert">Welcome to UNITY SITE! Enjoy your visit.</div>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 class="logo">UNITY SITE</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Welcome to Unitysite</h2>
+            <p>Your one-stop solution for all things web.</p>
+            <button class="cta-button">Get Started</button>
+        </div>
+    </section>
+    <!-- Login Form (Initially Hidden) -->
+<div class="login-modal" id="loginModal">
+    <div class="login-container">
+        <span class="close-btn" onclick="closeLoginForm()">&times;</span>
+        <h2>Login to Access Advanced Features</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+
+
+   <!-- About Section -->
+<section class="about" id="about">
+    <div class="about">
+        <img src="unittyicon.png" style="height: 50px;">
+        <h2>About Us</h2>
+        <p>Welcome to UNITY SITE, where creativity meets technology. We specialize in delivering top-notch web solutions tailored to your needs. Our team is passionate about empowering businesses to thrive online with visually compelling designs, robust development, and effective digital strategies.</p>
+    </div>
+</section>
+
+    <!-- Features Section -->
+    <section class="features" id="services">
+        <div class="feature">
+            <i class="icon">🎨</i>
+            <h3>Design</h3>
+            <p>Create stunning visuals that impress your audience.</p>
+        </div>
+        <div class="feature">
+            <i class="icon">💻</i>
+            <h3>Development</h3>
+            <p>Build fast and responsive websites with ease.</p>
+        </div>
+        <div class="feature">
+            <i class="icon">📈</i>
+            <h3>Marketing</h3>
+            <p>Reach your target audience effectively.</p>
+        </div>
+        <div class="feature">
+            <i class="icon">🔒</i>
+            <h3>Security</h3>
+            <p>Keep your website safe with advanced security.</p>
+        </div>
+        <div class="feature">
+            <i class="icon">📞</i>
+            <h3>Support</h3>
+            <p>24/7 support to help with any issues.</p>
+        </div>
+        <div class="feature">
+            <i class="icon">🚀</i>
+            <h3>SEO Optimization</h3>
+            <p>Boost your site’s visibility in search engines.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p>&copy; 2024 UNITY SITE. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a>
+        </div>
+    </footer>
+    <script>
+        // Function to show and auto-hide the alert
+        window.addEventListener('load', function() {
+            const alertBox = document.getElementById('welcome-alert');
+            alertBox.style.opacity = 1;  // Show the alert
+
+            // Set a timeout to hide the alert after 3 seconds
+            setTimeout(function() {
+                alertBox.style.opacity = 0;  // Hide the alert
+            }, 3000);  // 3000 ms = 3 seconds
+        });
+    </script>
+    <script>
+        // Function to open the login form
+        document.querySelector('.cta-button').addEventListener('click', function() {
+            document.getElementById('loginModal').style.display = 'flex';
+        });
+    
+        // Function to close the login form
+        function closeLoginForm() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+    
+        // Close the form when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('loginModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+     <script>
+        // Function to create sparkle effect
+        document.addEventListener('mousemove', (e) => {
+            // Create sparkle element
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = `${e.pageX}px`;
+            sparkle.style.top = `${e.pageY}px`;
+            document.body.appendChild(sparkle);
+
+            // Remove sparkle after animation completes
+            setTimeout(() => sparkle.remove(), 500);
+        });
+    </script>
+    
+</body>
+</html>
