@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beginner Web Layout</title>
+    <title>UNITY WEBSITE</title>
     <link rel="icon" type="image/x-icon" href="unittyicon.png">
     <link rel="stylesheet" href="main.css">
 </head>
@@ -20,6 +20,7 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#footer">Contact</a></li>
                 </ul>
+                <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
             </nav>
         </div>
     </header>
@@ -27,30 +28,29 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h2>Welcome to Unitysite</h2>
+            <h2>Welcome to Unity Site</h2>
             <p>Your one-stop solution for all things web.</p>
             <button class="cta-button">Get Started</button>
         </div>
     </section>
+
     <!-- Login Form (Initially Hidden) -->
-<div class="login-modal" id="loginModal">
-    <div class="login-container">
-        <span class="close-btn" onclick="closeLoginForm()">&times;</span>
-        <h2>Login to Access Advanced Features</h2>
-        <form id="loginForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Login</button>
-        </form>
+    <div class="login-modal" id="loginModal">
+        <div class="login-container">
+            <span class="close-btn" onclick="closeLoginForm()">&times;</span>
+            <h2>Login to Access Advanced Features</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
     </div>
-</div>
 
-
-   <!-- About Section -->
+    <!-- About Section -->
+       <!-- About Section -->
 <section class="about" id="about">
     <div class="about">
         <img src="unittyicon.png" style="height: 50px;">
@@ -100,51 +100,7 @@
             <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a>
         </div>
     </footer>
-    <script>
-        // Function to show and auto-hide the alert
-        window.addEventListener('load', function() {
-            const alertBox = document.getElementById('welcome-alert');
-            alertBox.style.opacity = 1;  // Show the alert
 
-            // Set a timeout to hide the alert after 3 seconds
-            setTimeout(function() {
-                alertBox.style.opacity = 0;  // Hide the alert
-            }, 3000);  // 3000 ms = 3 seconds
-        });
-    </script>
-    <script>
-        // Function to open the login form
-        document.querySelector('.cta-button').addEventListener('click', function() {
-            document.getElementById('loginModal').style.display = 'flex';
-        });
-    
-        // Function to close the login form
-        function closeLoginForm() {
-            document.getElementById('loginModal').style.display = 'none';
-        }
-    
-        // Close the form when clicking outside of it
-        window.onclick = function(event) {
-            const modal = document.getElementById('loginModal');
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        }
-    </script>
-     <script>
-        // Function to create sparkle effect
-        document.addEventListener('mousemove', (e) => {
-            // Create sparkle element
-            const sparkle = document.createElement('div');
-            sparkle.classList.add('sparkle');
-            sparkle.style.left = `${e.pageX}px`;
-            sparkle.style.top = `${e.pageY}px`;
-            document.body.appendChild(sparkle);
-
-            // Remove sparkle after animation completes
-            setTimeout(() => sparkle.remove(), 500);
-        });
-    </script>
-    
+    <script src="scripts.js"></script>
 </body>
 </html>
